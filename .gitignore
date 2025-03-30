@@ -1,0 +1,6 @@
+.vercel
+.vscode
+__pycache__
+test.py
+Pipfile
+compressIMG.py
