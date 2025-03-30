@@ -45,7 +45,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     # allow_origins=["*"],
-    allow_origins=["http://localhost:5173", "http://sapherons.netlify.app"],
+    allow_origins=["http://localhost:5173", 
+                   "https://sapherons.netlify.app"],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
