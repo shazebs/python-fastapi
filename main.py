@@ -94,9 +94,9 @@ def get_item(item_id: int) -> Item:
         raise HTTPException(status_code=404, detail="Item not found")
     
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="127.0.0.1", port=8000)
 
 # http://127.0.0.1:8000/docs for SwaggerUI 
 # http://127.0.0.1:8000/openapi.json
