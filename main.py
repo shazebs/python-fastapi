@@ -46,8 +46,7 @@ app.add_middleware(
     CORSMiddleware,
     # allow_origins=["*"],
     allow_origins=["http://localhost:5173", 
-                   "https://sapherons.netlify.app",
-                   "https://python-fastapi-delta.vercel.app"],
+                   "https://sapherons.netlify.app",],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
@@ -57,7 +56,7 @@ app.add_middleware(
 app.add_route("/graphql", GraphQL(
     schema, 
     debug=True, 
-    playground_options={"request.credentials": "same-origin"}) # Forces secure connections
+    playground_options=False) 
 )
 
 class Item(BaseModel):
