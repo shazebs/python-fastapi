@@ -53,11 +53,7 @@ app.add_middleware(
 )
 
 # Add GraphQL Route
-app.add_route("/graphql", GraphQL(
-    schema, 
-    debug=True, 
-    playground_options=False) 
-)
+app.add_route("/graphql", GraphQL(schema, debug=True))
 
 class Item(BaseModel):
     firstName: str = None
