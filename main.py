@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from ariadne import QueryType, make_executable_schema, graphql_sync
 from ariadne.asgi import GraphQL
+from ariadne import QueryType, make_executable_schema, graphql_sync
 
 
 companies = [
@@ -54,7 +54,11 @@ app.add_middleware(
 )
 
 # Add GraphQL Route
-app.add_route("/graphql", GraphQL(schema, debug=True))
+app.add_route("/graphql", GraphQL(
+    schema, 
+    debug=True, 
+    playground_options={"request.credentials": "same-origin"}) # Forces secure connections
+)
 
 class Item(BaseModel):
     firstName: str = None
